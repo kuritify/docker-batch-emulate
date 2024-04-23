@@ -16,6 +16,9 @@ jobs:
         with:
           node-version: 21
 
+      - name: corepack enable for yarn v4
+        run: corepack enable
+
       - name: echo
         run: bash scripts/echo.sh
 
