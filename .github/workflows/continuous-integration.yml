@@ -1,0 +1,24 @@
+name: Continuous Integration
+
+on:
+  pull_request:
+    types: [opened, reopened, synchronize]
+
+jobs:
+  ci:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          submodules: recursive
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 21
+
+      - name: echo
+        run: bash scripts/echo.sh
+
+      - name: docker build
+        run: yarn docker-build
+        
