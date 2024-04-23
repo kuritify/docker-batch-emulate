@@ -1,4 +1,12 @@
 {
   "name": "docker-batch-emulate",
-  "packageManager": "yarn@4.1.1"
+  "scripts": {
+    "echo": "echo $PWD",
+    "docker-build": "bash $PROJECT_CWD/scripts/docker-build.sh -f $PROJECT_CWD/Dockerfile $PROJECT_CWD -t kuritify/docker-batch-emulate",
+    "docker-build-shared-dockerbuild": "bash $PROJECT_CWD/scripts/docker-build.sh -f $PROJECT_CWD/scripts/docker-files/Dockerfile-node-20.1.2 $PROJECT_CWD -t kuritify/docker-batch-emulate-shared-docker-file"
+  },
+  "packageManager": "yarn@4.1.1",
+  "dependencies": {
+    "lodash": "^4.17.21"
+  }
 }
